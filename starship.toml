@@ -1,0 +1,59 @@
+format = """\
+$os$username$all\
+$fill\
+$nodejs $java\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[✗](bold red) '
+
+[os]
+format = '[$symbol]($style) '
+style = '#00BFFF'
+disabled = false
+
+[os.symbols]
+Windows = ''
+
+[username]
+format = "[Draflo  ](bold red) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = 'on [KK PC](bold yellow) '
+trim_at = "."
+disabled = false
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+disabled = false
+
+[time]
+format = '[$time]($style) '
+disabled = false
+
+[java]
+format = '\[[$symbol($version)]($style)\]'
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[directory]
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+truncation_length = 5
+truncation_symbol = '.../'
+home_symbol = ' '
+style = '#00BFFF'
+
+[git_branch]
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+style = '#09cf24'
+symbol = ' '
